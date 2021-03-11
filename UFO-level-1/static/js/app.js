@@ -22,17 +22,17 @@ datatohtml(tableData);
 button.on("click",() => {
     d3.event.preventDefault();
     var sightingdate = inputdate.property("value").trim();
-    var filterdate = tableData.filter(tableData => tableData.datetime === inputDate);
+    var filterdate = tableData.filter(tableData => tableData.datetime === inputdate);
     tbody.html("");
 
     let response = {
-        filterDate
+        filterdate
     }
-    if(response.filterDate.length !== 0) {
-        addData(filterDate);
+    if(response.filterdate.length !== 0) {
+        addData(filterdate);
     }
 
         else {
-            $tbody.append("tr").append("td").text("No Sightings");
+            tbody.append("tr").append("td").text("No Sightings");
         }
 })
